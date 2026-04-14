@@ -8,7 +8,7 @@ const suse = SUSE_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Eloi Shema • Portfolio",
   description: "My personal portfolio",
 };
 
