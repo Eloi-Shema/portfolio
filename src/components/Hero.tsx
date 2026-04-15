@@ -111,7 +111,7 @@ export default function HeroSection() {
         <nav className="relative max-w-7xl mx-auto z-30 flex justify-between items-center px-5 py-10 w-full">
           <div className="flex items-center gap-2 font-bold tracking-[2.5px] text-black text-sm uppercase">
             <Image src={logo} alt="EloiShema.dev" width={30} height={30} />
-            EloiShema.dev
+            <span className="hidden md:block">EloiShema.dev</span>
           </div>
           <div className="flex gap-5">
             {["Projects", "Contact"].map((item) => (
@@ -130,21 +130,21 @@ export default function HeroSection() {
           className="relative z-20 flex flex-col flex-1 justify-center items-center text-center px-5 md:-mt-20"
           style={parallax}
         >
-          <div className="text-[clamp(28px,7vw,80px)] font-bold leading-[0.92] tracking-[-1px] md:tracking-[-3px] lg:tracking-[-4px] text-black min-h-[1em]">
+          <div className="text-[clamp(28px,9vw,80px)] md:text-[clamp(28px,7vw,80px)] font-bold leading-[0.92] tracking-[-1px] md:tracking-[-3px] lg:tracking-[-4px] text-black min-h-[1em]">
             {line1}
             {phase === "name" && (
               <span className="inline-block w-0.5 h-[0.6em] bg-black ml-1 align-middle animate-blink" />
             )}
           </div>
 
-          <div className="text-[clamp(18px,4vw,48px)] tracking-[-0.5px] md:tracking-[-1px] italic text-niceBlue mt-3 sm:mt-4 min-h-[1.2em]">
+          <div className="text-[clamp(18px,5vw,48px)] md:text-[clamp(18px,4vw,48px)] tracking-[-0.5px] md:tracking-[-1px] italic text-niceBlue mt-3 md:mt-4 min-h-[1.2em]">
             {line2}
             {phase === "title" && (
               <span className="inline-block w-0.5 h-[0.75em] bg-niceBlue ml-1 align-middle animate-blink" />
             )}
           </div>
 
-          <div className="text-[clamp(12px,1.6vw,18px)] text-zinc-800 mt-3 sm:mt-5 min-h-[1.4em] max-w-xs sm:max-w-lg xl:max-w-2xl">
+          <div className="text-[clamp(12px,3vw,18px)] md:text-[clamp(12px,1.6vw,18px)] text-zinc-800 mt-3 md:mt-5 min-h-[1.4em] max-w-xs md:max-w-lg xl:max-w-2xl">
             {line3}
             {(phase === "subtitle" || phase === "done") && (
               <span className="inline-block w-px h-[0.75em] bg-zinc-400 ml-0.5 align-middle animate-blink" />

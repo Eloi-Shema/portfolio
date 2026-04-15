@@ -24,7 +24,7 @@ export interface Project {
   tagline: string;
   stack: string[];
   desc: string;
-  impact: string[];
+  impact?: string[] | undefined;
   url: string;
   screenshot: string;
   video?: string;
@@ -136,7 +136,6 @@ export const PROJECTS: Project[] = [
     tagline: "Work in Progress",
     stack: [""],
     desc: "Something new is in the works.",
-    impact: [""],
     url: "#",
     screenshot: "",
   },

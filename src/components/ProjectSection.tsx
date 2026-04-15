@@ -37,7 +37,9 @@ function ProjectCard({
   };
 
   const handleMouseEnter = () => {
+    if (isTouch) return;
     setHinted(true);
+
     hoverTimer.current = setTimeout(() => {
       if (ref.current) onActivate(project, ref.current);
     }, 1500);
@@ -48,17 +50,12 @@ function ProjectCard({
     setHinted(false);
   };
 
-  const handleTouchStart = () => {
-    setHinted(true);
-    hoverTimer.current = setTimeout(() => {
-      if (ref.current) onActivate(project, ref.current);
-    }, 600);
-  };
+  const handleTouchStart = () => {};
 
   const handleTouchEnd = () => {};
 
   return (
-    <div className={`${featured ? "scale-75" : "scale-100"}`}>
+    <div className={`${featured ? "md:scale-75" : "scale-100"}`}>
       <div
         ref={ref}
         className={`group relative overflow-hidden cursor-pointer aspect-video`}
@@ -104,25 +101,27 @@ function ProjectCard({
           />
         )}
 
-        <div
-          className={`absolute inset-0 flex items-center justify-center bg-black/70 transition-opacity duration-300 ${hinted ? "opacity-100" : "opacity-0"}`}
-        >
-          <span
-            className={`text-white ${featured ? "text-xl px-10 py-5" : "text-xs px-4 py-2"} font-semibold uppercase border border-white `}
+        {!isTouch && (
+          <div
+            className={`absolute inset-0 flex items-center justify-center bg-black/70 transition-opacity duration-300 ${hinted ? "opacity-100" : "opacity-0"}`}
           >
-            View
-          </span>
-        </div>
+            <span
+              className={`text-white ${featured ? "text-xl px-10 py-5" : "text-xs px-4 py-2"} font-semibold uppercase border border-white `}
+            >
+              View
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="mt-3 px-0.5">
         <h3
-          className={`font-bold text-black leading-tight ${featured ? "text-2xl" : "text-base"}`}
+          className={`font-bold text-black leading-tight ${featured ? "md:text-2xl" : "text-base"}`}
         >
           {project.name}
         </h3>
         <p
-          className={`${featured ? "text-base" : "text-[10px]"} text-zinc-700 tracking-[2px] uppercase mt-0.5`}
+          className={`${featured ? "xs:text-[10px] md:text-base" : "text-[10px]"} text-zinc-700 tracking-[2px] uppercase mt-0.5`}
         >
           {project.tagline}
         </p>
@@ -167,15 +166,15 @@ export default function ProjectsSection() {
   return (
     <>
       <section id="projects" className="relative z-20 backdrop-blur-2xl">
-        <div className="max-w-7xl mx-auto px-5 py-16 sm:py-20">
-          <div className="flex items-center gap-4 mb-10 sm:mb-12">
-            <span className="text-[10px] sm:text-xs font-bold text-black/50 tracking-[2.5px] uppercase whitespace-nowrap">
+        <div className="max-w-7xl mx-auto px-5 py-16 md:py-20">
+          <div className="flex items-center gap-4 mb-10 md:mb-12">
+            <span className="text-[10px] md:text-xs font-bold text-black/50 tracking-[2.5px] uppercase whitespace-nowrap">
               Projects
             </span>
             <div className="flex-1 h-px bg-black/10" />
           </div>
 
-          <div className="mb-6 sm:mb-8">
+          <div className="mb-6">
             <ProjectCard
               project={featured}
               onActivate={openOverlay}
@@ -184,7 +183,7 @@ export default function ProjectsSection() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5">
             {rest.map((p) => (
               <ProjectCard
                 key={p.id}
@@ -209,7 +208,7 @@ export default function ProjectsSection() {
             onClick={doClose}
           />
 
-          <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none p-4 sm:p-6">
+          <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none p-4 md:p-6">
             <div
               className="pointer-events-auto w-full max-w-150 max-h-[88vh] overflow-y-auto bg-white shadow-2xl"
               style={{
@@ -246,7 +245,7 @@ export default function ProjectsSection() {
                   {active.desc}
                 </p>
 
-                {active.impact.length > 0 && (
+                {active.impact && (
                   <ul className="mb-10 space-y-4">
                     {active.impact.map((point, i) => (
                       <li
