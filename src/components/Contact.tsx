@@ -11,10 +11,7 @@ export default function ContactSection() {
     >
       <div className="max-w-7xl mx-auto px-5 pt-16 md:pt-20">
         <div className="flex items-center gap-4 mb-12 md:mb-16">
-          <span
-            className="text-[10px] md:text-xs font-bold text-black/50
-                           tracking-[2.5px] uppercase whitespace-nowrap"
-          >
+          <span className="text-[10px] md:text-xs font-bold text-black/50 tracking-[2.5px] uppercase whitespace-nowrap">
             Get in Touch
           </span>
           <div className="flex-1 h-px bg-black/10" />

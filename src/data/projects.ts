@@ -144,7 +144,7 @@ export const PROJECTS: Project[] = [
 export const CONTACT_LINKS: ContactLink[] = [
   {
     label: "Email",
-    href: "mailto:shemaeloi.dev@gmail.com",
+    href: "mailto:build@eloishema.dev",
     tech: "email",
   },
   {
@@ -154,7 +154,7 @@ export const CONTACT_LINKS: ContactLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/eloishema",
     tech: "linkedin",
   },
 ];
