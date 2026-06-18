@@ -94,8 +94,23 @@ export const PROJECTS: Project[] = [
     screenshot: "/trapeloi.png",
     video: "/trapeloi.mp4",
   },
+
   {
     id: 2,
+    name: "Zone7.rw",
+    tagline: "Real Estate Website",
+    stack: ["Next.js", "Typescript", "MongoDB", "Cloudinary", "NextAuth"],
+    desc: "Zone7 is a real estate platform built for the Rwandan property listings market. It features authentication, role-based access control (User/Broker/Admin), and cloud image management via Cloudinary.\n Property listings, user interests, and inquiries are all handled through a structured REST API backed by MongoDB.",
+    impact: [
+      "Rwandans can browse, filter, and inquire about properties to buy or rent, all in one place.",
+      "Brokers and admins get a dedicated dashboard to manage listings, users, and inquiries without technical skills.",
+      "Email notifications keep both buyers and agents in the loop without manual follow-ups.",
+    ],
+    url: "https://zone7.rw",
+    screenshot: "/zone7.jpg",
+  },
+  {
+    id: 3,
     name: "Dukundekawa",
     tagline: "Musasa Coffee Cooperative",
     stack: [
@@ -113,22 +128,8 @@ export const PROJECTS: Project[] = [
       "SEO helps the site rank on search engines and work smoothly on low-end mobile devices.",
       "Secure admin controls ensure only the right people can publish or moderate content.",
     ],
-    url: "https://dukundekawa.rw",
+    url: "https://dukundekawa.kitech.rw",
     screenshot: "/dukundekawa.jpg",
-  },
-  {
-    id: 3,
-    name: "Zone7.rw",
-    tagline: "Real Estate Website",
-    stack: ["Next.js", "Typescript", "MongoDB", "Cloudinary", "NextAuth"],
-    desc: "Zone7 is a real estate platform built for the Rwandan property listings market. It features authentication, role-based access control (User/Broker/Admin), and cloud image management via Cloudinary.\n Property listings, user interests, and inquiries are all handled through a structured REST API backed by MongoDB.",
-    impact: [
-      "Rwandans can browse, filter, and inquire about properties to buy or rent, all in one place.",
-      "Brokers and admins get a dedicated dashboard to manage listings, users, and inquiries without technical skills.",
-      "Email notifications keep both buyers and agents in the loop without manual follow-ups.",
-    ],
-    url: "https://zone7.rw",
-    screenshot: "/zone7.jpg",
   },
   {
     id: 4,
