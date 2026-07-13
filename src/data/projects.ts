@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
       "SEO helps the site rank on search engines and work smoothly on low-end mobile devices.",
       "Secure admin controls ensure only the right people can publish or moderate content.",
     ],
-    url: "https://dukundekawa.kitech.rw",
+    url: "https://dukundekawa.rw",
     screenshot: "/dukundekawa.jpg",
   },
   {
